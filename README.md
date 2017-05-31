@@ -1,3 +1,3 @@
 # NAR-Visual-Vocabulary
 
-- [ ] egeargreafgreaaefg
+- [ ] Go to server for Visual Vocab editing in SublimeText (ongoing).rtf
