@@ -53,7 +53,7 @@ function barChart(data,stylename,media,xMin,xMax,xAxisHighlight,plotpadding,legA
     //yLabel.call(yAxis.tickSize(yticksize))
     yLabel
         .attr("transform",function(){
-                return "translate("+(margin.left+yLabelOffset)+","+margin.top+")"
+                return "translate("+(margin.left+yLabelOffset-1)+","+margin.top+")"
             })
         
     xMin=Math.min(xMin,d3.min(data, function(d) { return +d.value;}))
