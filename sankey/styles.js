@@ -28,7 +28,7 @@ linecolours:["#154577","#58bdbb","#cabd92","#ac252a","#ee5427","#f9a71a","#b0d48
 var styleweb = {classes:
 [{class:"background{fill: none;}"},
 {class:"chartholder{fill: none;}"},
-{class:"title{font-size:25.0px; fill: #3b3d3b; font-weight: 100; letter-spacing:-.2px;}"},
+{class:"title{font-size:25.0px; fill: #3b3d3b; font-weight: 100;}"},
 {class:"subtitle{font-size:18.0px; fill: #6b6e68; font-weight: 100; letter-spacing:-.2px;}"},
 {class:"legend{font-family:Avenir; font-size:12.75px; line-height:15.3px; font-weight: 100; fill: #000;}"},
 {class:"label{font-size:14px; fill: #6b6e68; font-weight: 400;}"},
