@@ -29,8 +29,8 @@ var styleprint = {classes:
 titleOffset:4,
 subOffset:-4,
 legendyOffset:0,
-linecolours:["#c6d6cc","#006a93","#55a2c7","","#ad1c21","#486ba0"],
-fillcolours:["#006a93","#ddb831","#c6d6cc","#55a2c7","#ad1c21","#486ba0","#ddb831"]
+linecolours:["#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3","#FFFFFF"],
+fillcolours:["#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3","#FFFFFF"]
 }
 
 var styleweb = {classes:
@@ -62,8 +62,8 @@ var styleweb = {classes:
 titleOffset:29,
 subOffset:-7,
 legendyOffset:0,
-linecolours:["#A5526A","#F19F9E","#D36969","","#66bfd4","#486ba0"],
-fillcolours:["#A5526A","#F19F9E","#D36969","#69A1AA","#66bfd4","#486ba0","#F19F9E"]
+linecolours:["#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3","#FFFFFF"],
+fillcolours:["#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3","#FFFFFF"]
 }
 
 var stylesoc = {classes:
