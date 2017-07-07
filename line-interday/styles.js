@@ -6,7 +6,7 @@ var styleprint = {classes:
 {class:"xBand:nth-child(even){fill:#fff;stroke:none}"},
 {class:"Shade{fill:none;opacity:0.2;stroke:none}"},
 {class:"chartholder{fill: none}"},
-{class:"title{font-family:Avenir; font-size:10px; line-height:11px; fill:#000000; font-weight:900; letter-spacing:-.2px;}"},
+{class:"title{font-family:Avenir; font-size:10px; line-height:11px; fill:#000000; font-weight:900;}"},
 {class:"subtitle{font-family:Avenir; font-style:italic; fill:#000000; font-size:7.5px; line-height:9px; font-weight:100; letter-spacing:-.2px;}"},
 {class:"labels{transform:scale(.9,1); font-family:Avenir; font-size:8px; line-height:9px; fill: #000; font-weight: 100;}"},
 {class:"source{transform:scale(.9,1); fill: #000000; font-family:Avenir; font-style:italic; font-size:8px; line-height:9px; font-weight: 100;}"},

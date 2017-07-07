@@ -2,7 +2,7 @@
 var styleprint = {classes:
 [{class:"background{fill:none}"},
 {class:"chartholder{fill:none}"},
-{class:"title{font-family:Avenir; line-height: 11px; font-size: 10px; fill: #000000; font-weight: 900; letter-spacing:-.2px;}"},
+{class:"title{font-family:Avenir; line-height: 11px; font-size: 10px; fill: #000000; font-weight: 900;}"},
 {class:"subtitle{font-family:Avenir; font-style:italic; fill:#000000; font-size:7.5px; line-height:9px; font-weight:100; letter-spacing:-.2px;}"},
 {class:"legend{font-family:Avenir; font-size:8px; line-height:9px; font-weight: 100; fill: #000;}"},
 {class:"labels{font-family:Avenir; font-size:8px; line-height:9px; fill:#000; font-weight:100;}"},
@@ -37,7 +37,7 @@ fillcolours:["#154577","#58bdbb","#cabd92","#ac252a","#ee5427","#f9a71a","#b0d48
 var styleweb = {classes:
 [{class:"background{fill: none}"},
 {class:"chartholder{fill: none;}"},
-{class:"title{font-family: Avenir; font-size:17px; line-height:18px; font-weight: 900; fill: #000; letter-spacing:-.2px;}"},
+{class:"title{font-family: Avenir; font-size:17px; line-height:18px; font-weight: 900; fill: #000;}"},
 {class:"subtitle{font-family:Avenir; font-size:12.75px; line-height:15.3px; font-style:italic; font-weight:100; fill:#000; letter-spacing:-.2px;}"},
 {class:"legend{font-family:Avenir; font-size:13.6px; line-height:15.3px; font-weight:100; fill:#000;}"},
 {class:"source{font-family:Avenir; font-style:italic; fill: #000; font-size:11px; line-height:12px; font-weight:100;}"},
