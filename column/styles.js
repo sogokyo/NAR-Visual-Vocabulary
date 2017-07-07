@@ -24,7 +24,7 @@ var styleprint = {classes:
 titleOffset:9,
 subOffset:-4,
 legendyOffset:0,
-fillcolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#64a056","#00809c","#675388","#a16698","#d2d3d3"],
+fillcolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3"],
 forecastColours:["#8998b8","#b7e0dc"]
 }
 
