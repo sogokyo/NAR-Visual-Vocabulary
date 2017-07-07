@@ -26,8 +26,8 @@ var styleprint = {classes:
 titleOffset:9,
 subOffset:-4,
 legendyOffset:0,
-linecolours:["#154577","#58bdbb","#cabd92","#ac252a","#ee5427","#f9a71a","#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3"],
-fillcolours:["#154577","#58bdbb","#cabd92","#ac252a","#ee5427","#f9a71a","#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3"]
+linecolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3"],
+fillcolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3"]
 }
 
 var styleweb = {classes:
@@ -57,8 +57,8 @@ var styleweb = {classes:
 titleOffset:29,
 subOffset:-7,
 legendyOffset:0,
-linecolours:["#154577","#58bdbb","#cabd92","#ac252a","#ee5427","#f9a71a","#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3"],
-fillcolours:["#154577","#58bdbb","#cabd92","#ac252a","#ee5427","#f9a71a","#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3"]
+linecolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#64a056","#00809c","#675388","#a16698","#d2d3d3"],
+fillcolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#64a056","#00809c","#675388","#a16698","#d2d3d3"]
 }
 
 var stylesoc = {classes:
@@ -86,8 +86,8 @@ var stylesoc = {classes:
 titleOffset:36,
 subOffset:0,
 legendyOffset:0,
-linecolours:["#EB3F50","#00D9CA","#BF9413","#1F5E99","#A7FF59","#FF9B96","#81838F"],
-fillcolours:["#EB3F50","#00D9CA","#BF9413","#1F5E99","#A7FF59","#FF9B96","#81838F"]
+linecolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#64a056","#00809c","#675388","#a16698","#d2d3d3"],
+fillcolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#64a056","#00809c","#675388","#a16698","#d2d3d3"]
 }
 
 var stylevid = {classes:
