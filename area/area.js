@@ -120,7 +120,7 @@ function areaChart(data, stylename ,media, yMin, yMax ,yAxisHighlight, numTicksy
         // .tickSize(yOffset/30)//Half the size of the Subtitle text
         .tickSize(0)
         .orient("bottom")
-        .tickFormat(d3.time.format("%b. ’%y"));
+        .tickFormat(d3.time.format("%b ’%y"));
         //d= date, m=month as #, b=Jan, B=January, y=01, Y=2001;
     //Plot and position on the page
     var xLabels=plot.append("g")
