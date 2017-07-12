@@ -317,8 +317,8 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
         .attr("stroke",function(d,i){
             return colours[i];  
         })
-        .attr("x1",w-legOffset+32-(yOffset*1.1))
-        .attr("x2",w-legOffset+32-(yOffset*1.1)-yOffset)
+        .attr("x1",w-legOffset+32-(yOffset*0))
+        .attr("x2",w-legOffset+32-(yOffset*0)-yOffset)
         .attr("y1",yOffset+1)
         .attr("y2",yOffset+1)
         .attr("class",media+"lines")
