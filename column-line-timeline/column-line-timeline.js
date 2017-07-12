@@ -101,10 +101,12 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
       .call(yAxisR)
 
     yLabelL.selectAll('text')
-        .attr("style", null);
+        .attr("style", null)
+        .style("fill", colours[1]);
     yLabelR.selectAll('text')
         .attr("style", null)
         .attr("x", yOffset*2)
+        .style("fill", colours[0])
 
     //calculate the width of the y axes objects
     var yLabelLOffsetL=yLabelL.node().getBBox().width
@@ -303,7 +305,7 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
         .style("fill", colours[1])
 
     var barTextR=legend.append("text")
-        .attr("x",w-20)
+        .attr("x",w-14)
         .attr("y","1.4em")
         .attr("class",media+"legend")
         .style("text-anchor","end")
@@ -315,10 +317,10 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
         .attr("stroke",function(d,i){
             return colours[i];  
         })
-        .attr("x1",w-legOffset-15-(yOffset*1.1))
-        .attr("x2",w-legOffset-15-(yOffset*1.1)-yOffset)
-        .attr("y1",yOffset)
-        .attr("y2",yOffset)
+        .attr("x1",w-legOffset+32-(yOffset*1.1))
+        .attr("x2",w-legOffset+32-(yOffset*1.1)-yOffset)
+        .attr("y1",yOffset+1)
+        .attr("y2",yOffset+1)
         .attr("class",media+"lines")
 
     function colculateTicksize(align, offset) {
