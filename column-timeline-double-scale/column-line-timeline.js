@@ -294,7 +294,7 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
         .style("fill", colours[0])
 
     var barTextR=legend.append("text")
-        .attr("x",w-9)
+        .attr("x",w-11)
         .attr("y","1.4em")
         .attr("class",media+"legend")
         .style("text-anchor","end")
