@@ -36,7 +36,7 @@ function sankeyChart(data,stylename,media,plotpadding,legAlign,yAlign){
     // Set the sankey diagram properties
     var sankey = d3.sankey(plotWidth)
         .nodeWidth(yOffset*0.7)
-        .nodePadding(yOffset*1.5)
+        .nodePadding(yOffset*2)
         .size([plotWidth, plotHeight]);
 
     var path = sankey.link();
@@ -140,13 +140,13 @@ function sankeyChart(data,stylename,media,plotpadding,legAlign,yAlign){
       .attr("width", sankey.nodeWidth())
       .attr("transform", 
               "translate(" + margin.left + "," + margin.top + ")")
-      .style("fill", "9D9D9C")
+      .style("fill", "#959595")
 
     var numNodes=plotData.nodes.length/2;
 
     node.append("text")
-        .attr("class",media+"subtitle")
-        .attr("y",-yOffset/4)
+        .attr("class",media+"legend")
+        .attr("y",-yOffset/3)
         .attr("x",function (d){
             if(d.x>plotWidth/2) {
                 return yOffset*.7
@@ -163,19 +163,24 @@ function sankeyChart(data,stylename,media,plotpadding,legAlign,yAlign){
         })
         .text(function (d) {return d.name})
 
+
         //Add column labels
         plot.append("text")
-            .attr("class",media+"subtitle")
+            .attr("class",media+"year-label")
             .attr("y",yOffset)
             .attr("x",margin.left)
             .text(seriesNames[0])
+            .attr("y",yOffset+3)
+
+
 
         plot.append("text")
-            .attr("class",media+"subtitle")
+            .attr("class",media+"year-label")
             .attr("y",yOffset)
             .attr("x",plotWidth-margin.right)
             .style("text-anchor", "end")
             .text(seriesNames[1])
+            .attr("y",yOffset+3)
 
     
     // the function for moving the nodes

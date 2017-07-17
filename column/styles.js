@@ -70,7 +70,7 @@ var stylesoc = {classes:
 {class:"xAxis text{font-size: 28px; fill: #ffffff; opacity: 0.50; font-weight: 100; line-height: 18px;}"},
 {class:"yAxis{fill:none; stroke: none;}"},
 {class:"yAxis line{fill:none; stroke-width: 2.0px; stroke-dasharray:2,8; opacity: 0.38; stroke:#ffffff;}"},
-{class:"yAxis text{font-size: 28px; fill: #ffffff; opacity: 0.50; font-weight: 100; line-height: 28px; font-feature-settings: 'tnum' 1; text-anchor: end;}"},
+{class:"yAxis text{font-size:8px; fill: #ffffff; opacity: 0.50; font-weight: 100; line-height: 28px; font-feature-settings: 'tnum' 1; text-anchor: end;}"},
 {class:"origin line{fill:none; stroke:#ffffff; stroke-width: 2.0px; opacity: 0.5; stroke-dasharray:1,0}"},
 {class:"lines{fill:none; stroke-width: 5px;  stroke-linecap: round;}"}
 ],
