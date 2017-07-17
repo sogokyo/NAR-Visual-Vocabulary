@@ -18,7 +18,7 @@ function drawFrame(styles, media,titley,suby) {
     //Adds it to the head of the document
     document.getElementsByTagName('head')[0].appendChild(stylesheet);
     
-    var width = 600,
+    var width = 580,
         height = 200,
         titleYoffset = titley,
         subtitleYoffset = suby,
