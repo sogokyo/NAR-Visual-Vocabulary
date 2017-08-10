@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+    body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+    text {font-family:Avenir; font-weight:100; font-size:8px;}
+
+  </style>
+</head>
+
+<body>
+  <script>
+    // Feel free to change or delete any of the code you see in this editor!
+    
+   	var margin = {left:87,right:10,top:50,bottom:20}
+    
+    var svg = d3.select("body").append("svg")
+      .attr("width", 341)
+      .attr("height", 300);
+    
+    var mydata = [
+
+      {name:"JASRAC (Japan)",value:935.1},
+      {name:"KOMCA (South Korea)",value:97.9},
+      {name:"MCSC (China)",value:15.3},
+      {name:"COMPASS (Singapore)",value:13.9},
+      {name:"MACP (Malaysia)",value:11.7},
+      {name:"VCPMC (Vietnam)",value:2.6},
+      {name:"FILSCAP (Philippines)",value:1.8},
+      {name:"MCT (Thailand)",value:1.6},
+      {name:"WAMI (Indonesia)",value:0.6},
+
+    ];
+
+    
+    var names = d3.map(mydata,function(d){
+      return d.name;
+    })
+    
+    var xScale = d3.scaleLog()
+    	.domain([.5,1000])
+    	.range([0,341-(margin.left+margin.right)]);
+    
+    var yScale = d3.scaleOrdinal()
+    	.domain(names)
+    	.range([0,900-(margin.top+margin.bottom)])
+    
+    svg.append("g")
+    	.selectAll("rect")
+    	.data(mydata)
+    	.enter()
+    	.append("rect")
+    	.attr("y",function(d,i){
+      return margin.top+(i * 16);
+    })
+    	.attr("width",function(d){return xScale(d.value)})
+      .attr("height",10)
+    	.attr("x",margin.left)
+    	.attr("fill","black")
+    
+    svg.append("g")
+    	.selectAll("text")
+    	.data(mydata)
+    	.enter()
+    	.append("text")
+    	.attr("y",function(d,i){
+      return margin.top+(i * 16)+7;
+    })
+    	.attr("text-anchor","end")
+    	.attr("x",margin.left-5)
+    .text(function(d){return d.name})
+
+    
+    var xAxis = d3.axisBottom()
+    	.scale(xScale)
+    	.ticks(17, ",.1s");
+             
+    svg.append("g").attr("transform","translate("+margin.left+","+(margin.top+145)+")")
+    .call(xAxis)
+    
+
+  </script>
+</body>
