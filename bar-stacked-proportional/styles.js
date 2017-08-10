@@ -1,7 +1,7 @@
 var styleprint = {classes:
 [{class:"background{fill: none}"},
 {class:"chartholder{fill: none}"},
-{class:"title{font-family:Avenir; font-size:10px; line-height:11px; fill:#000000; font-weight:900;}"},
+{class:"title{font-family:Avenir; font-size:10px; line-height:11px; fill:#000000; font-weight:900; letter-spacing:-.2px;}"},
 {class:"subtitle{font-family:Avenir; font-style:italic; fill:#000000; font-size:7.5px; line-height:9px; font-weight:100 letter-spacing:-.2px;;}"},
 {class:"legend{font-family:Avenir; font-size:8px; line-height:9px; font-weight:100; fill:#000;}"},
 {class:"labels{font-family:Avenir; font-size:8px; line-height:9px; fill: #000; font-weight: 100;}"},
@@ -28,14 +28,14 @@ var styleprint = {classes:
 titleOffset:9,
 subOffset:-4,
 legendyOffset:0,
-linecolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#64a056","#00809c","#675388","#a16698","#d2d3d3"],
-fillcolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#64a056","#00809c","#675388","#a16698","#d2d3d3"]
+linecolours:["#154577","#58bdbb","#cabd92","#ac252a","#ee5427","#f9a71a","#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3"],
+fillcolours:["#154577","#58bdbb","#cabd92","#ac252a","#ee5427","#f9a71a","#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3"]
 }
 
 var styleweb = {classes:
 [{class:"background{fill: none}"},
 {class:"chartholder{fill: none;}"},
-{class:"title{font-size:17px; font-family:Avenir; line-height:18px; font-weight:900; fill:#000;}"},
+{class:"title{font-size:17px; font-family:Avenir; line-height:18px; font-weight:900; fill:#000; letter-spacing:-.2px;}"},
 {class:"subtitle{font-family:Avenir; font-style:italic; font-size:12.75px; line-height:15.3px; font-weight:100; fill:#000; letter-spacing:-.2px;}"},
 {class:"legend{font-family:Avenir; font-size:13.6px; line-height:15.3px; font-weight: 100; fill: #000;}"},
 {class:"source{fill:#000; font-family:Avenir; font-style:italic; font-size:11px; line-height:12px; font-weight:100;}"},
@@ -62,8 +62,8 @@ var styleweb = {classes:
 titleOffset:27,
 subOffset:-7,
 legendyOffset:0,
-linecolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#64a056","#00809c","#675388","#a16698","#d2d3d3"],
-fillcolours:["#154577","#58bdbb","#ac252a","#cabd92","#ee5427","#f9a71a","#b0d480","#64a056","#00809c","#675388","#a16698","#d2d3d3"]
+linecolours:["#154577","#58bdbb","#cabd92","#ac252a","#ee5427","#f9a71a","#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3"],
+fillcolours:["#154577","#58bdbb","#cabd92","#ac252a","#ee5427","#f9a71a","#b0d480","#009a8e","#00809c","#675388","#a16698","#d2d3d3"]
 }
 
 var stylesoc = {classes:
