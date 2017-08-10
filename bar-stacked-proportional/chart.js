@@ -37,8 +37,8 @@ function makeChart(data,seriesNames,stylename,media,plotpadding,legAlign,yAlign)
 
 
     //should auto-size this from label length - but for now, specify the gutters either side of bars
-    var labelMarginL = 120;
-    var labelMarginR = 40;
+    var labelMarginL = 65;
+    var labelMarginR = 20;
 
 
     //identify total size - used for y axis
@@ -68,9 +68,9 @@ function makeChart(data,seriesNames,stylename,media,plotpadding,legAlign,yAlign)
         .attr("fill",function(d,i){
             return colours[i];
         })
-        .attr("width",plotWidth/10)
-        .attr("height",plotHeight/40)
-        .attr("y",subtitleYoffset+5)
+        .attr("width",plotWidth/50)
+        .attr("height",plotHeight/50)
+        .attr("y",subtitleYoffset-5.8)
         .attr("x",function(d,i){
             return labelMarginL+(i*(plotWidth/5))
         })
@@ -82,7 +82,7 @@ function makeChart(data,seriesNames,stylename,media,plotpadding,legAlign,yAlign)
         .attr("fill","black")
         .attr("y",subtitleYoffset)
         .attr("x",function(d,i){
-            return labelMarginL+(i*(plotWidth/5))
+            return labelMarginL+(i*(plotWidth/5)+9)
         })
         .text(function(d){
             return d.split("prop_")[1]+(" (%)")
@@ -115,11 +115,11 @@ function makeChart(data,seriesNames,stylename,media,plotpadding,legAlign,yAlign)
     plot.append("g")
         .attr("id","axis")
         .attr("class",media+"xAxis")
-        .attr("transform","translate(0,"+(h-30)+")")
+        .attr("transform","translate(0,"+(h-14)+")")
       .attr("text-anchor","middle")
       .call(xAxis)
       .selectAll("text")
-      .attr("dy",".9em");
+      .attr("dy",".8em");
 
 
     //find out dimensions of key so that chart is offset below it
@@ -128,7 +128,7 @@ function makeChart(data,seriesNames,stylename,media,plotpadding,legAlign,yAlign)
 
     var yScale = d3.scale.linear()
         .domain([0,totalSize])
-        .range([0,plotHeight-(vOffset+30)])
+        .range([0,plotHeight-(vOffset+28)])
 
     var yData = data.map(function(d,i){
         return [{x:0,y:d.size}]
@@ -156,7 +156,7 @@ function makeChart(data,seriesNames,stylename,media,plotpadding,legAlign,yAlign)
         .attr("transform",function(d,i){
 
             var offset = i*2;//creates spacing between rows
-            return "translate(0,"+(vOffset+yScale(d[0].y0)+offset)+")";
+            return "translate(0,"+(vOffset-6+yScale(d[0].y0)+offset)+")";
         })
 
     groups.append("text")
@@ -165,9 +165,9 @@ function makeChart(data,seriesNames,stylename,media,plotpadding,legAlign,yAlign)
         })
         .attr("fill","black")
         .attr("text-anchor","end")
-        .attr("x",labelMarginL-5)
+        .attr("x",labelMarginL-4)
         .attr("y",function(d){
-            return yScale(d[0].height)/2.2+5
+            return yScale(d[0].height)/2+2
         })
 
     groups.append("text")
@@ -175,10 +175,10 @@ function makeChart(data,seriesNames,stylename,media,plotpadding,legAlign,yAlign)
             return d[0].total
         })
         .attr("fill","black")
-        .attr("x",plotWidth-5)
+        .attr("x",plotWidth-0)
         .attr("text-anchor","end")
         .attr("y",function(d){
-            return yScale(d[0].height)/2+5
+            return yScale(d[0].height)/2+3
         })
 
     groups.selectAll("rect")
