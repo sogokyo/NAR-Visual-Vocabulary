@@ -81,7 +81,7 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
     var yAxisL = d3.svg.axis()
         .scale(yScaleL)
         .tickValues(y1ticks)
-        .tickSize(10)
+        .tickSize(0)
         .orient("left")
 
     var yAxisR = d3.svg.axis()
@@ -122,7 +122,7 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
             })
 
     //now we can reassign margins and set final plotWidth
-    margin.left=yLabelLOffsetL-8;
+    margin.left=yLabelLOffsetL-0;
     margin.right=yLabelLOffsetR;
 
     plotWidth=w-(margin.left+margin.right)
