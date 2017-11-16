@@ -81,10 +81,10 @@ function drawFrame(styles, media,titley,suby) {
         if(media=="print") {
             header.append("path")
             .attr("class",media+"hat")
-            .attr("d","M 0.5,"+(titleYoffset+margin.top)+" L0.5,0.5 "+(width-0.5)+",0.5 "+(width-0.5)+","+(titleYoffset+margin.top))
+            .attr("d","M 0,.5 L0,.5 "+(width-0)+",.5 "+(width-0)+",")
             chart.append("path")
             .attr("class",media+"hat")
-            .attr("d","M 0.5,"+(height-0.5)+" L"+(width-0.5)+","+(height-0.5)+"")
+            .attr("d","M 0,"+(height-0.5)+" L"+(width-0)+","+(height-0.5)+"")
         };
         
         var contentOffsetTop = chart.select("#"+media+"header").node().getBBox().y + chart.select("#"+media+"header").node().getBBox().height;
