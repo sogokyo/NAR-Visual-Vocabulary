@@ -93,13 +93,13 @@ function makeChart(data,stylename,media,sort,yMin,yMax,yAxisHighlight,numTicksy,
             //extracts names for cat labels
             return d.x
     }))
-        .rangeRoundBands([0,plotWidth-yLabelOffset],0.5)
+        .rangeRoundBands([0,plotWidth-yLabelOffset],0.5) //Adjusts width of data part of chart
 
     var xAxis = d3.svg.axis()
         .scale(xScale)
         .ticks(yOffset)
         .orient("bottom")
-        .tickSize(4);
+        .tickSize(3);
 
     var xLabels=plot.append("g")
 .attr("class", media+"xAxis")
@@ -133,7 +133,7 @@ function makeChart(data,stylename,media,sort,yMin,yMax,yAxisHighlight,numTicksy,
         .attr("cy",function(d){
             return yScale(d.y)
         })
-        .attr("r",plotWidth/40)
+        .attr("r",plotWidth/40) //80 for OGP
         .attr("fill",colours[0])
 
     pops.append("line")

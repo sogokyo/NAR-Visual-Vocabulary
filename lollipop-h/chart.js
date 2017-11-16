@@ -98,7 +98,7 @@ function makeChart(data,stylename,media,sort,xMin,xMax,xAxisHighlight,numTicksx,
     var xAxis = d3.svg.axis()
     .scale(xScale)
     .ticks(numTicksx)
-    .tickSize(plotHeight)
+    .tickSize(plotHeight-10)//–10 added to shorten x-axis grey tickmarks
     .orient("bottom");
         
     var xLabels=plot.append("g")

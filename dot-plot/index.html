@@ -18,9 +18,9 @@
         var dataURL = "example.csv"
         
         //titles, footnotes
-        var title = "Headline";
-        var subtitle = "(in percent)";//comment out subtitle assignment if not needed
-        var source = "Source";
+        var title = "Title";
+        var subtitle = "(in percent)";//delete all within "" if not needed
+        var source = "|Source";
 
         //put custom graph options here
         var xMin=0;
@@ -32,7 +32,7 @@
         // Print column sizes-- 1col 164pt: 2col 341pt: 3col 518pt:
         var frames=[
         {name:"print",width:341,height:204,units:'px',margins:[{top:5,right:0,bottom:3, left:0}],stylesheet:styleprint,legend:"hori",yLabel:"left"},
-        {name:"web",width:580,height:348,units:'px',margins:[{top:-2,right:0,bottom:5,left:0}],stylesheet:styleweb,legend:"hori",yLabel:"left"},
+        {name:"web",width:341,height:179,units:'px',margins:[{top:10,right:10,bottom:10,left:10}],stylesheet:styleweb,legend:"hori",yLabel:"left"},
         //{name:"social",width:560,height:750,units:'px',margins:[{top:36,right:50, bottom:25, left:50}],stylesheet:stylesoc,legend:"vert",yLabel:"left"},
         //{name:"video",width:1920,height:1080,units:'px',margins:[{top:80,right:207,bottom:50,left:207}],stylesheet:stylevid,legend:"hori",yLabel:"right"}
         ]
@@ -40,7 +40,7 @@
         //sets the padding inside the chart area
         var chartpadding=[
         {name:"print",margin:[{top:12, right:25, bottom:12, left:15}]},
-        {name:"web",margin:[{top:20, right:40, bottom:20, left:25}]},
+        {name:"web",margin:[{top:12, right:25, bottom:12, left:15}]},
         {name:"social",margin:[{top:25, right:25, bottom:62, left:12}]},
         {name:"video",margin:[{top:55, right:35,bottom:68, left:42}]}
         ]

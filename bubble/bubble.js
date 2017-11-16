@@ -99,7 +99,7 @@ function bubbleChart(data, stylename, media,yMin,yMax,xMin,xMax,numTicksy, numTi
 
     var xScale = d3.scale.linear()
         .domain(xExtent)
-        .range([0,(plotWidth-yLabelOffset)])
+        .range([0,(plotWidth-yLabelOffset)-10])
     console.log(xExtent)
     var xAxis = d3.svg.axis()
         .scale(xScale)

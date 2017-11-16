@@ -18,16 +18,16 @@
         var dataURL = "changeme.csv"
         
         //titles, footnotes
-        var title = "Headline";
+        var title = "Title";
         var subtitle = "(in percent)";//comment out subtitle assignment if not needed
-        var source = "Source";
+        var source = "|Source";
 
         //put custom graph options here
         var sort="ascending"//ascending or descending
         var yMin=300//Minimum value for the y-axis
         var yMax=650//Maximum value for the y-axis
         var yAxisHighlight=300;
-        var numTicksy = 10;//rough number of ticks for y axis
+        var numTicksy = 7;//rough number of ticks for y axis
 
         
 
@@ -35,7 +35,7 @@
         // Print column sizes-- 1col 164pt: 2col 341pt: 3col 518pt:
        var frames=[
         {name:"print",width:164,height:204,units:'px',margins:[{top:5,right:0,bottom:3, left:0}],stylesheet:styleprint,legend:"hori",yLabel:"left"},
-        {name:"web",width:200,height:348,units:'px',margins:[{top:-2,right:0,bottom:5,left:0}],stylesheet:styleweb,legend:"hori",yLabel:"left"},
+        {name:"web",width:341,height:179,units:'px',margins:[{top:10,right:10,bottom:10,left:10}],stylesheet:styleweb,legend:"hori",yLabel:"left"},
         // {name:"social",width:560,height:750,units:'px',margins:[{top:36,right:50, bottom:25, left:50}],stylesheet:stylesoc,legend:"vert",yLabel:"left"},
         // {name:"video",width:1920,height:1080,units:'px',margins:[{top:80,right:207,bottom:50,left:207}],stylesheet:stylevid,legend:"hori",yLabel:"right"}
         ]
@@ -43,7 +43,7 @@
         //sets the padding inside the chart area
         var chartpadding=[
         {name:"print",margin:[{top:12, right:0, bottom:10, left:-3}]},
-        {name:"web",margin:[{top:25, right:-5, bottom:17, left:-7}]},
+        {name:"web",margin:[{top:12, right:5, bottom:10, left:-3}]},
         {name:"social",margin:[{top:30, right:25, bottom:30, left:12}]},
         {name:"video",margin:[{top:55, right:35,bottom:68, left:42}]}
         ]
