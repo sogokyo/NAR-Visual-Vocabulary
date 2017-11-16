@@ -113,8 +113,8 @@ function xyHeatmap(data,stylename,media,plotpadding,legAlign,yAlign,breaks){
             .data(colours)
             .enter()
             .append("rect")
-            .attr("width",cellWidth)
-            .attr("height",cellHeight/1.4)
+            .attr("width",cellWidth-8.5) //legend box widths
+            .attr("height",cellHeight/4.8) //legend box heights
             .attr("x",function(d,i){
                 return i*labelWidth;
             })
@@ -128,9 +128,9 @@ function xyHeatmap(data,stylename,media,plotpadding,legAlign,yAlign,breaks){
             .append("text")
             .attr("class",media+"subtitle")
             .attr("x",function(d,i){
-                return cellWidth+5+(i*labelWidth);
+                return cellWidth-7+(i*labelWidth); //x position of legend text
             })
-            .attr("y","1em")
+            .attr("y",".9em") //y position of legend text
             .text(function(d){
                 return "up to "+d;
             });

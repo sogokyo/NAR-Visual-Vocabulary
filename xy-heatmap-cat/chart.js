@@ -166,7 +166,7 @@ function makeChart(data,stylename,media,plotpadding,legAlign,yAlign,colNames){
         })
         .attr("class",media+"labels")
         .attr("text-anchor","middle")
-        .attr("y",45)
+        .attr("y",47)
         .attr("x",function(d,i){
             return xScale(i)+(xScale.rangeBand()/2)
         })
@@ -183,7 +183,7 @@ function makeChart(data,stylename,media,plotpadding,legAlign,yAlign,colNames){
         .attr("class",media+"labels")
         .attr("text-anchor","end")
         .attr("y",function(d,i){
-            return yScale(i)+(yScale.rangeBand()/2-16)
+            return yScale(i)+(yScale.rangeBand()/2-5)
         })
         .attr("x",35)
     

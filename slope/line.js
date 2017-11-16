@@ -408,8 +408,8 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
             .attr("id",function(d,i){
                 return media+"t"+i
             })
-            .attr("x",yOffset+yOffset/1.3)
-            .attr("y",yOffset/0.7)
+            .attr("x",yOffset+yOffset/1.8)
+            .attr("y",yOffset/1)
             .attr("class",media+"legend")
             .text(function(d){
                 return d;
@@ -419,9 +419,9 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
                 return colours[i];  
             })
             .attr("x1",1.5)
-            .attr("x2",yOffset+2)
-            .attr("y1",yOffset/0.95)
-            .attr("y2",yOffset/0.95)
+            .attr("x2",yOffset+1)
+            .attr("y1",yOffset/1.4)
+            .attr("y2",yOffset/1.4)
             .attr("class",media+"lines")
 
         legend.attr("transform",function(d,i){
