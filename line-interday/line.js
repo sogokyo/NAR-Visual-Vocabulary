@@ -168,7 +168,7 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
       .attr("text-anchor","middle")
       .call(xAxis)
       .selectAll("text")
-      .attr("dy","1.2em");
+      .attr("dy","1.3em");
 
     if(minAxis) {
         var xAxisMinor = d3.svg.axis()

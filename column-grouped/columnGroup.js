@@ -273,10 +273,10 @@ if (forecastIndex){
 
 
     var arrowConfig = {
-        width: media == "web" ? 7:4,
-        length: media == "web" ? 12:7,
+        width: media == "web" ? 4:4,
+        length: media == "web" ? 7:7,
         height: media == "web" ? 14:8,
-        gap: media == "web" ? 6:3,
+        gap: media == "web" ? 4:3,
         margin: 2
     }
 
@@ -312,7 +312,7 @@ if (forecastIndex){
         .attr("class",media+"annotationText")
         .attr("text-anchor","start")
         .attr("x",function(d){return x0(d.cat) - ((x0.range()[1] - x0.range()[0] - x0.rangeBand())/2)})
-        .attr("y",yScale.range()[1]-(arrowConfig.width*1.5+arrowConfig.gap+2))
+        .attr("y",yScale.range()[1]-(arrowConfig.width*1.5+arrowConfig.gap+0))
         .html(function(d){
             return d.annotate
         })

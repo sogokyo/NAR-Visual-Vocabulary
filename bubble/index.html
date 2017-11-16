@@ -24,7 +24,7 @@
 
         //graph options
         var yMin=2//Minimum value for the y-axis
-        var yMax=15//Maximum value for the y-axis
+        var yMax=16//Maximum value for the y-axis
         var xMin=-10//Minimum value for the x-axis
         var xMax=50//Maximum value for the x-axis
         var yAxisHighlight=2;
@@ -39,17 +39,17 @@
         //Use the frames array to set unique values for each media type of frame
         // Print column sizes-- 1col 164px: 2col 341px: 3col 518px
         var frames=[
-        {name:"print",width:164,height:250,units:'px',margins:[{top:5,right:5,bottom:3, left:0}],stylesheet:styleprint,legend:"hori",yLabel:"left"},
-        // {name:"web",width:580,height:422,units:'px',margins:[{top:0,right:20,bottom:5,left:0}],stylesheet:styleweb,legend:"hori",yLabel:"left"},
+        {name:"print",width:164,height:250,units:'px',margins:[{top:5,right:0,bottom:3, left:0}],stylesheet:styleprint,legend:"hori",yLabel:"left"},
+        {name:"web",width:341,height:179,units:'px',margins:[{top:10,right:10,bottom:10,left:10}],stylesheet:styleweb,legend:"hori",yLabel:"left"},
         // {name:"social",width:560,height:750,units:'px',margins:[{top:50,right:50, bottom:25, left:50}],stylesheet:stylesoc,legend:"vert",yLabel:"left"},
         //{name:"video",width:1920,height:1080,units:'px',margins:[{top:80,right:207,bottom:50,left:207}],stylesheet:stylevid,legend:"hori",yLabel:"rleft"}
         ]
         
         //sets the padding inside the chart area
         var chartpadding=[
-        {name:"print",margin:[{top:30, right:10, bottom:12, left:10}]},
+        {name:"print",margin:[{top:30, right:0, bottom:12, left:10}]},
         {name:"datawatch",margin:[{top:10, right:10, bottom:15, left:5}]},
-        {name:"web",margin:[{top:30, right:25, bottom:20, left:25}]},
+        {name:"web",margin:[{top:30, right:10, bottom:10, left:10}]},
         {name:"social",margin:[{top:55, right:0, bottom:50, left:70}]},
         {name:"video",margin:[{top:55, right:35,bottom:68, left:42}]}
         ]

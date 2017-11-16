@@ -18,12 +18,12 @@
         var dataURL = "groups.csv"
         
         //titles, footnotes
-        var title = "Title ";
-        var subtitle = "(in millions of dollars)";//delete subtitle text if not needed
-        var source = " | Source";
+        var title = "Total wind power capacity installed in Japan ";
+        var subtitle = "(in millions of kilo-watts)";//delete subtitle text if not needed
+        var source = "Includes offshore capacity; estimates for 2020, 2030, 2050 | Source: Japan Wind Power Association data";
         //graph options
         var yMin=0
-        var yMax=3500
+        var yMax=8000
         var yAxisHighlight=0;
         var logScale=false;
         var logScaleStart=1000;
@@ -34,7 +34,7 @@
         // Print column sizes-- 1col 53.71mm: 2col 112.25mm: 3col 170.8mm: 4col 229.34mm: 5col 287.88mm: 6col 346.43
         var frames=[
         {name:"print",width:164,height:204,units:'px',margins:[{top:5,right:0,bottom:3, left:0}],stylesheet:styleprint,legend:"hori",yLabel:"left"},
-        // {name:"web",width:580,height:348,units:'px',margins:[{top:-2,right:0,bottom:5,left:0}],stylesheet:styleweb,legend:"hori",yLabel:"left"},
+        {name:"web",width:341,height:179,units:'px',margins:[{top:10,right:10,bottom:10,left:10}],stylesheet:styleweb,legend:"hori",yLabel:"left"},
         //{name:"social",width:560,height:750,units:'px',margins:[{top:36,right:50, bottom:25, left:50}],stylesheet:stylesoc,legend:"vert",yLabel:"left"},
         // {name:"video",width:1920,height:1080,units:'px',margins:[{top:80,right:207,bottom:50,left:207}],stylesheet:stylevid,legend:"hori",yLabel:"right"}
         ]
@@ -42,7 +42,7 @@
         //sets the padding inside the chart area
         var chartpadding=[
         {name:"print",margin:[{top:17, right:0, bottom:10, left:0}]},
-        {name:"web",margin:[{top:37, right:0, bottom:17, left:-1}]},
+        {name:"web",margin:[{top:17, right:5, bottom:10, left:0}]},
         {name:"social",margin:[{top:0, right:0, bottom:40, left:0}]},
         {name:"video",margin:[{top:55, right:35,bottom:80, left:0}]}
         ]

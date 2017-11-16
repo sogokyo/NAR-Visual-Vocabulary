@@ -235,10 +235,10 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
     })
 
     var arrowConfig = {
-        width: media == "web" ? 7:4,
-        length: media == "web" ? 12:7,
-        height: media == "web" ? 14:8,
-        gap: media == "web" ? 6:3,
+        width: media == "web" ? 4:4,
+        length: media == "web" ? 7:7,
+        height: media == "web" ? 8:8,
+        gap: media == "web" ? 3:3,
         margin: 2
     }
 
