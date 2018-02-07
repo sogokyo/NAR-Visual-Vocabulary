@@ -15,7 +15,7 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
     var yOffset=d3.select("#"+media+"Subtitle").style("font-size");
     yOffset=Number(yOffset.replace(/[^\d.-]/g, ''));
     
-    //Get the width,height and the marginins unique to this chart
+    //Get the width,height and the margins unique to this chart
     var w=plot.node().getBBox().width;
     var h=plot.node().getBBox().height;
     var margin=plotpadding.filter(function(d){
@@ -31,7 +31,7 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
     var yDomain;
     var yCeiling, yCeilings = [];
 
-    //calculate rfxange of y axis series data, also get max y point for every row
+    //calculate range of y axis series data, also get max y point for every row
     data.forEach(function(d,i){
             yCeiling = [];
         seriesNames.forEach(function(e){
@@ -105,7 +105,7 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
     // Draw NAR-style bands
 
     var xBandsG = plot.append("g")
-        .attr("class", "xBand");
+        .attr("class", "g.xBand");
 
 
     var yLabel=plot.append("g")
@@ -113,7 +113,7 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
     .call(yAxis);
 
     //calculate what the ticksize should be now that the text for the labels has been drawn
-    var yLabelOffset=yLabel.node().getBBox().width-5
+    var yLabelOffset=yLabel.node().getBBox().width
     //console.log("offset= ",yLabelOffset)
     var yticksize=colculateTicksize(yAlign, yLabelOffset);
     //console.log(yticksize);
@@ -153,22 +153,21 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
         .tickFormat(function(d,i){
             // Always show complete date for first tick
             if(i == 0){
-                return d3.time.format("%d %b %Y")(d).replace(/^0/g,"")
+                return d3.time.format("%b %Y")(d).replace(/^0/g,"")
             // If ticks are at least one month apart, show year for ticks in January
             }else if(ticks.major[2].getMonth() - ticks.major[0].getMonth() >= 1 && d.getMonth() == 0){
-                return d3.time.format("%d %b ’%y")(d).replace(/^0/g,"")
+                return d3.time.format("%b ’%y")(d).replace(/^0/g,"")
             // Otherwise, if ticks are at least one month apart just show month...
             }else if(ticks.major[1].getMonth() - ticks.major[0].getMonth >= 1){
                 return d3.time.format("%b")(d).replace(/^0/g,"")
             // Or finally, show day and month
             }else{
-                return d3.time.format("%d")(d).replace(/^0/g,"")
+                return d3.time.format("%b")(d).replace(/^0/g,"")
                 // return d3.time.format("%d %b")(d) if month's second mention needed
-                //Change to ("%y") to show abbreviated years only
 
             }
         });
-        //d= date, m=month as #, b=Jan, B=January, y=01, Y=2001;
+        //d= date, m=month as #, b=Jan., B=January, ’y= ’01, Y=2001;
     //Plot and position on the page
 ;
 
@@ -183,9 +182,7 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
       .attr("text-anchor","middle")
       .call(xAxis)
       .selectAll("text")
-      .attr("dy","1.3em")
-      .attr("dx","-.1em");//delete this line of code if text offset is not needed
-
+      .attr("dy","1.3em");
 
     xLabel.selectAll('text')
         .attr("style", null)
@@ -219,8 +216,8 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
             parent.append('rect')
                 .attr("class",media+"Shade")
                 .attr("x", function(d) {
-                    return xScale(d.begin)-("width", xScale(bandTicks[2]) - xScale(bandTicks[1]))/2})
-                .attr("width", function (d) {return xScale(d.end)-xScale(d.begin)+("width", xScale(bandTicks[2]) - xScale(bandTicks[1]))/2})
+                    return xScale(d.begin)})
+                .attr("width", function (d) {return xScale(d.end)-xScale(d.begin)})
                 .attr("y", yScale(yMax))
                 .attr("height",plotHeight-yScale(yMax))
                 .attr("transform",function(){
@@ -287,7 +284,7 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
 
 
     //create a line function that can convert data[] into x and y points
-    var lineData= d3.svg.line()
+    var lineData= d3.svg.area()
         .x(function(d,i) { 
             return xScale(d.date); 
         })
@@ -325,16 +322,7 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
         .data(bandTicks.slice(1, bandTicks.length))
         .enter()
         .append("rect")
-        //s.attr("class", media+"xBand"s)
-        .attr("fill",function(d,i){
-
-            if (isEven(i)){
-                return "#e6e6e6"
-            }   else {
-                return "#fff"
-            }
-            
-        })
+        .attr("class", media+"xBand")
         .attr("x", function(b){return (margin.left+yLabelOffset) + xScale(b)})
         .attr("width", xScale(bandTicks[2]) - xScale(bandTicks[1]))
         .attr("y", margin.top + yScale(yMax))
@@ -342,6 +330,7 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
         .attr("clip-path", "url(#xBandClip_" + i + ")");
 
     });
+
 
     var lines = plot.append("g").attr("id","series").selectAll("g")
             .data(plotArrays)
@@ -441,7 +430,7 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
 
     if (seriesNames[0]!="x"){
         // //create a legend first
-        var legendyOffset=3
+        var legendyOffset=0
         var legend = plot.append("g")
             .attr("id",media+"legend")
             .on("mouseover",pointer)
@@ -564,9 +553,6 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
     }
 
 
-function isEven(n) {
-   return n % 2 == 0;
-}
 
 
 

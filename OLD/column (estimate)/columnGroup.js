@@ -83,7 +83,7 @@ function columnChart(data,stylename,media,plotpadding,legAlign, logScale, logSca
     .classed(media+"origin",true);
 
     var x0 = d3.scale.ordinal()
-    .rangeBands([4, plotWidth-4-yLabelOffset], .15);
+    .rangeBands([0, plotWidth-yLabelOffset], .45);
 
     var x1 = d3.scale.ordinal();
 
@@ -274,8 +274,8 @@ if (forecastIndex){
 
 
     var arrowConfig = {
-        width: media == "web" ? 4:4,
-        length: media == "web" ? 7:7,
+        width: media == "web" ? 7:4,
+        length: media == "web" ? 12:7,
         height: media == "web" ? 14:8,
         gap: media == "web" ? 6:3,
         margin: 2

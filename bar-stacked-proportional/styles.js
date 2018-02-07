@@ -41,7 +41,7 @@ var styleweb = {classes:
 {class:"source{fill:#000; font-family:Avenir; font-style:italic; font-size:6.5px; line-height:7px; font-weight:100;}"},
 {class:"labels{font-family:Avenir; font-size:8px; line-height:9px; fill:#000; font-weight:100;}"},
 {class:"logo{fill: none;}"},
-{class:"hat{fill:none; stroke-width:1.3px; stroke:#000;}"},
+{class:"hat{fill:none; stroke-width:00px; stroke:#000;}"},
 {class:"xAxis{fill:none; stroke: none;}"},
 {class:"xAxis line{fill:none; stroke-width:.3px; stroke:#acacac;}"},
 {class:"xAxis text{font-family:Avenir; fill:#000; font-size:8px; line-height:9; font-weight:100;}"},

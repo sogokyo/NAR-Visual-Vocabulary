@@ -32,7 +32,7 @@
         var logScaleStart=1000;
         var markers=false;//show circle markers
         var numTicksy = 4;//rough number of ticks for y axis
-        var interval="days";//days, weeks, months, quarters, years, lustrum (5 years) or decade
+        var interval="months";//days, weeks, months, quarters, years, lustrum (5 years) or decade
         var minAxis=true //true or false
         var ticks//Contains the tick values for the major and minor xAxis
         //Use the frames array to set unique values for each media type of frame
@@ -60,7 +60,7 @@
             //date formatter, matching the format of the incoming csv...
             //var parseDate = d3.time.format("%Y %b").parse;
             //var parseDate = d3.time.format("%Y").parse;//just full year
-            var parseDate = d3.time.format("%d/%m/%y").parse;
+            var parseDate = d3.time.format("%m/%y").parse;
             /*
 
             some common formatting parsers....
@@ -129,7 +129,7 @@
                 'years':{major: timeline(dateDomain,"year",1),minor:timeline(dateDomain,"month",1)},
                 'biannual':{major: timeline(dateDomain,"year",2),minor:timeline(dateDomain,"month",1)},
                 'quarters':{major: timeline(dateDomain,"year",1),minor:timeline(dateDomain,"month",3)},
-                'months':{major: timeline(dateDomain,"month",1),minor:timeline(dateDomain,"day",1)},
+                'months':{major: timeline(dateDomain,"month",3),minor:timeline(dateDomain,"day",31)},
                 'weeks':{major: timeline(dateDomain,"week",1),minor:timeline(dateDomain,"day",1)},
                 'days':{major: timeline(dateDomain,"day",2),minor:timeline(dateDomain,"hour",24)}
             }[int];
