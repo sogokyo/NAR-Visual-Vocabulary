@@ -34,7 +34,7 @@ function barChart(data,stylename,media,xMin,xMax,xAxisHighlight,plotpadding,legA
     var drag = d3.behavior.drag().on("drag", moveLegend);
 
     var yScale = d3.scale.ordinal()
-    .rangeBands([0, plotHeight],.4)
+    .rangeBands([0, plotHeight],.15)
     .domain(data.map(function(d) { return d.cat;}));
 
     var yAxis = d3.svg.axis()
@@ -68,13 +68,13 @@ function barChart(data,stylename,media,xMin,xMax,xAxisHighlight,plotpadding,legA
     var xAxis = d3.svg.axis()
     .scale(xScale)
     .ticks(numTicksx)
-    .tickSize(plotHeight-7)
+    .tickSize(plotHeight+2)
     .orient("bottom");
 
     var xLabels=plot.append("g")
         .attr("id", media+"xAxis")
         .attr("class", media+"xAxis")
-        .attr("transform", "translate("+(margin.left)+"," + (margin.top+4.5) + ")")
+        .attr("transform", "translate("+(margin.left)+"," + (margin.top-0) + ")")
         .call(xAxis);
 
 
@@ -126,7 +126,7 @@ function barChart(data,stylename,media,xMin,xMax,xAxisHighlight,plotpadding,legA
                     }
                     else {return xScale(0)-yLabelOffset-(yOffset*.5)}
                 })
-                .attr("y", function(d) { return yScale(d.cat)+(yScale.rangeBand()-yOffset*.2    ); });
+                .attr("y", function(d) { return yScale(d.cat)+(yScale.rangeBand()-yOffset*.2); });
 
                 var clear = xLabels.selectAll(".tick").filter(function(d, i) {
                     return d!=originValue

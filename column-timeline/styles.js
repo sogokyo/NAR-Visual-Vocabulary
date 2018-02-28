@@ -7,7 +7,7 @@ var styleprint = {classes:
 {class:"labels{font-family:Avenir; font-size:8px; line-height:9px; fill:#000; font-weight: 100;}"},
 {class:"source{font-family:Avenir; font-style:italic; fill:#000000; font-size:6.5px; line-height]:7px; font-weight: 100;}"},
 {class:"logo{fill: none;}"},
-{class:"hat{fill:none; stroke-width:0.75px; stroke:#000;}"},
+{class:"hat{fill:none; stroke-width:0.3px; stroke:#000;}"},
 {class:"xAxis{fill:none; stroke-width:0px; stroke:none;}"},
 {class:"xAxis line{fill:none; stroke-width:2.5px; stroke:#000000; stroke-linecap:round;}"},
 {class:"xAxis text{font-family:Avenir; font-size:8px; line-height:9px; fill:#000000; font-weight: 100; font-feature-settings:'tnum' 1;}"},
