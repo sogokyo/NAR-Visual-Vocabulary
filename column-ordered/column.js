@@ -76,7 +76,7 @@ function columnChart(data,stylename,media,yMin,yMax,plotpadding,legAlign,yHighli
     .classed(media+"origin",true);
 
     var xScale = d3.scale.ordinal()
-    .rangeBands([0, plotWidth-yLabelOffset],.4);
+    .rangeBands([10, plotWidth-10-yLabelOffset],.12);
 
     var xAxis = d3.svg.axis()
     .scale(xScale)

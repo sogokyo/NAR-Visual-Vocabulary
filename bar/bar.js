@@ -34,7 +34,7 @@ function barChart(data,stylename,media,xMin,xMax,xAxisHighlight,plotpadding,legA
     var drag = d3.behavior.drag().on("drag", moveLegend);
 
     var yScale = d3.scale.ordinal()
-    .rangeBands([0, plotHeight],.15)
+    .rangeBands([2, plotHeight],.1)
     .domain(data.map(function(d) { return d.cat;}));
 
     var yAxis = d3.svg.axis()
@@ -68,14 +68,14 @@ function barChart(data,stylename,media,xMin,xMax,xAxisHighlight,plotpadding,legA
     var xAxis = d3.svg.axis()
     .scale(xScale)
     .ticks(numTicksx)
-    .tickSize(plotHeight+2)
+    .tickSize(plotHeight+0)
     .orient("bottom");
 
     var xLabels=plot.append("g")
         .attr("id", media+"xAxis")
         .attr("class", media+"xAxis")
-        .attr("transform", "translate("+(margin.left)+"," + (margin.top-0) + ")")
-        .call(xAxis);
+        .attr("transform", "translate("+(margin.left)+"," + (margin.top+2) + ")")
+        .call(xAxis).selectAll("text").attr("y",-11);
 
 
     var originValue = 0;

@@ -85,7 +85,7 @@ function columnChart(data, stylename, media,yMin,yMax,yAxisHighlight, chartpaddi
 
     var xScale = d3.time.scale()
         .domain(xDomain)
-        .range([0,(plotWidth-yLabelOffset)]);
+        .range([3,(plotWidth-1-yLabelOffset)]);
 
     var xAxis = d3.svg.axis()
         .scale(xScale)
@@ -198,7 +198,7 @@ function columnChart(data, stylename, media,yMin,yMax,yAxisHighlight, chartpaddi
                 .attr("id",function(d) { return d.date+"-"+d.value; })
                 .attr("class",media+"fill")
                 .attr("x", function(d) { return xScale(d.date) - (plotWidth/data.length)/2; })
-                .attr("width", plotWidth/data.length)
+                .attr("width", plotWidth/data.length-3.5)
                 .attr("y", function(d) { return yScale(Math.max(0, d.value))})
                 .attr("height", function(d) {return (Math.abs(yScale(d.value) - yScale(0))); })
                 .on("mouseover",pointer)

@@ -88,6 +88,7 @@ function drawFrame(styles, media,titley,suby) {
         };
        
         var contentOffsetTop = chart.select("#"+media+"header").node().getBBox().y + chart.select("#"+media+"header").node().getBBox().height;
+        contentOffsetTop += 11;
         
         //footers - source/footnote and logo
         var footer = chart.append("g");

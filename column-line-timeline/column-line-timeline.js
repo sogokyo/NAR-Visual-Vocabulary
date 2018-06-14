@@ -123,7 +123,7 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
 
     //now we can reassign margins and set final plotWidth
     margin.left=yLabelLOffsetL-0;
-    margin.right=yLabelLOffsetR;
+    margin.right=yLabelLOffsetR+0;
 
     plotWidth=w-(margin.left+margin.right)
 
@@ -138,7 +138,7 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
         .attr("height",plotHeight)*/
 
     //barwidth will be
-    var barWidth = plotWidth/barData.length*1.2;
+    var barWidth = plotWidth/barData.length*1.5;
 
     //a third axis for the background ticks linking the 2 scales
     var yAxisC = d3.svg.axis()
@@ -222,8 +222,8 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
                 .style("fill",colours[1])
                 .attr("id",function(d) { return d.date+"-"+d.value; })
                 .attr("class",media+"fill")
-                .attr("x", function(d) { return xScale(d.date) - (plotWidth/barData.length)*.25; })
-                .attr("width", plotWidth/barData.length*.5)
+                .attr("x", function(d) { return xScale(d.date) - (plotWidth/barData.length)*.44; })
+                .attr("width", plotWidth/barData.length*.82)
                 .attr("y", function(d) { return yScaleL(Math.max(0, d.value))})
                 .attr("height", function(d) {return (Math.abs(yScaleL(d.value) - yScaleL(0))); })
     })
@@ -291,7 +291,7 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
     
     var barTextL=legend.append("text")
         .attr("x","1.1em")
-        .attr("y","1.4em")
+        .attr("y","1.3em")
         .attr("class",media+"legend")
         .text(seriesNames[0])
 
@@ -299,14 +299,14 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
 
     legend.append("rect")
         .attr("x",legOffset+(yOffset/0))
-        .attr("y",-yOffset+yOffset/.6)
+        .attr("y",-yOffset+yOffset/0.64)
         .attr("width",(yOffset/100)*85)
         .attr("height",(yOffset/100)*85)
         .style("fill", colours[1])
 
     var barTextR=legend.append("text")
-        .attr("x",w-14)
-        .attr("y","1.4em")
+        .attr("x",w-15)
+        .attr("y","1.3em")
         .attr("class",media+"legend")
         .style("text-anchor","end")
         .text(seriesNames[1])
@@ -317,10 +317,10 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
         .attr("stroke",function(d,i){
             return colours[i];  
         })
-        .attr("x1",w-legOffset+32-(yOffset*0))
-        .attr("x2",w-legOffset+32-(yOffset*0)-yOffset)
-        .attr("y1",yOffset+1)
-        .attr("y2",yOffset+1)
+        .attr("x1",w-legOffset+40-(yOffset*0))
+        .attr("x2",w-legOffset+40-(yOffset*0)-yOffset)
+        .attr("y1",yOffset-0)
+        .attr("y2",yOffset-0)
         .attr("class",media+"lines")
 
     function colculateTicksize(align, offset) {

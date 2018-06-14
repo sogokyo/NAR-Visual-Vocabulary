@@ -74,7 +74,7 @@ function drawFrame(styles, media,titley,suby) {
             .attr("x", margin.left)
             .attr("y", subYOffset+subtitleYoffset+titleYoffset+margin.top)
             .text(subtitle)
-            .attr("dy",0)
+            .attr("dy",-.1)
             .call(wrap,width - (margin.left + margin.right),margin.left,media+"subtitle");
 
         //adds the hat and basline to the print version only

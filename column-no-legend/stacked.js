@@ -21,7 +21,7 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, yMin, yM
       });
     margin=margin[0].margin[0]
     var colours=stylename.linecolours;
-    var plotWidth = w-(margin.left+margin.right);
+    var plotWidth = w-(margin.left+margin.right+7);
     var plotHeight = h-(margin.top+margin.bottom);
     
     // console.log(plotWidth,colours,plotHeight,data)
@@ -123,7 +123,7 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, yMin, yM
 
     //bar width
     var xScale = d3.scale.ordinal()
-        .rangeBands([0, plotWidth-yLabelOffset],.4);
+        .rangeBands([10, plotWidth-5-yLabelOffset],0.10);
 
     var xAxis = d3.svg.axis()
         .scale(xScale)
@@ -150,7 +150,8 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, yMin, yM
       .attr("text-anchor","middle")
       .call(xAxis)
       .selectAll("text")
-      .attr("dy","1em");
+      .attr("dy","1em")
+      .attr("dx", "-0.17em");
 
 
 //For bars

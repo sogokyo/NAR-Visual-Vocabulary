@@ -83,7 +83,7 @@ function columnChart(data,stylename,media,plotpadding,legAlign, logScale, logSca
     .classed(media+"origin",true);
 
     var x0 = d3.scale.ordinal()
-    .rangeBands([4, plotWidth-4-yLabelOffset], .15);
+    .rangeBands([10, plotWidth-10-yLabelOffset], .13);
 
     var x1 = d3.scale.ordinal();
 

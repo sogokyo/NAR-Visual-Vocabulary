@@ -22,7 +22,7 @@ function columnChart(data,stylename,media,plotpadding,legAlign, logScale, logSca
       });
     margin=margin[0].margin[0]
 
-    var plotWidth=w-margin.left-margin.right
+    var plotWidth=w-margin.left-margin.right-5
     var plotHeight=h-margin.top-margin.bottom
 
     var colours=stylename.fillcolours;
@@ -83,7 +83,7 @@ function columnChart(data,stylename,media,plotpadding,legAlign, logScale, logSca
     .classed(media+"origin",true);
 
     var x0 = d3.scale.ordinal()
-    .rangeBands([0, plotWidth-yLabelOffset], .25);
+    .rangeBands([8, plotWidth-4-yLabelOffset], .12);
 
     var x1 = d3.scale.ordinal();
 
@@ -114,7 +114,8 @@ function columnChart(data,stylename,media,plotpadding,legAlign, logScale, logSca
       .attr("text-anchor","middle")
       .call(xAxis)
       .selectAll("text")
-      .attr("dy","1.2em");
+      .attr("dy","1.2em")
+      .attr("dx","-0.17em")      ;
 
     var category = plot.selectAll("."+media+"category")
         .data(plotData)
@@ -218,7 +219,7 @@ if (forecastIndex){
                 return media+"t"+i
             })
             .attr("x",yOffset+yOffset/5)
-            .attr("y",1.5)
+            .attr("y",-1)
             .attr("class",media+"legend")
             .text(function(d){
                 return d;
@@ -226,16 +227,16 @@ if (forecastIndex){
 
         legend.append("rect")
             .attr("x",0)
-            .attr("y",-yOffset+yOffset/2.5)
-            .attr("width",(yOffset/100)*85)
-            .attr("height",(yOffset/100)*85)
+            .attr("y",-yOffset+yOffset/1-7.7)
+            .attr("width",(yOffset/100)*90)
+            .attr("height",(yOffset/100)*90)
             .style("fill", function(d,i){return colours[i]})
 
         legend.attr("transform",function(d,i){
             if (legAlign=='hori') {
                 var gHeigt=d3.select("#"+media+"l0").node().getBBox().height;
                 if (i>0) {
-                    var gWidth=d3.select("#"+media+"l"+(i-1)).node().getBBox().width+15; 
+                    var gWidth=d3.select("#"+media+"l"+(i-1)).node().getBBox().width+10; 
                 }
                 else {gWidth=0};
                 legendyOffset=legendyOffset+gWidth;
@@ -312,7 +313,7 @@ if (forecastIndex){
         .attr("class",media+"annotationText")
         .attr("text-anchor","start")
         .attr("x",function(d){return x0(d.cat) - ((x0.range()[1] - x0.range()[0] - x0.rangeBand())/2)})
-        .attr("y",yScale.range()[1]-(arrowConfig.width*1.5+arrowConfig.gap+0))
+        .attr("y",yScale.range()[1]-(arrowConfig.width*1.5+arrowConfig.gap+2))
         .html(function(d){
             return d.annotate
         })

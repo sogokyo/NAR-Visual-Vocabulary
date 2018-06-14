@@ -68,7 +68,7 @@ function columnChart(data,stylename,media,plotpadding,legAlign,lineSmoothing, lo
         }).classed(media+"origin",true);
 
     var xScale = d3.scale.ordinal()
-    .rangeRoundBands([0, plotWidth], .3);
+    .rangeRoundBands([7, plotWidth-7], .12);
 
     var xAxis = d3.svg.axis()
     .scale(xScale)
@@ -152,13 +152,13 @@ function columnChart(data,stylename,media,plotpadding,legAlign,lineSmoothing, lo
 
     legend.attr("transform",function(d,i){
         if (legAlign=='hori') {
-            var gHeigt=d3.select("#"+media+"l0").node().getBBox().height;
+            var gHeight=d3.select("#"+media+"l0").node().getBBox().height;
             if (i>0) {
                 var gWidth=d3.select("#"+media+"l"+(i-1)).node().getBBox().width+15; 
             }
             else {gWidth=0};
             legendyOffset=legendyOffset+gWidth;
-            return "translate("+(legendyOffset)+","+(gHeigt)+")";  
+            return "translate("+(legendyOffset)+","+(gHeight)+")";  
         }
         else {
             var gHeight=d3.select("#"+media+"l"+(i)).node().getBBox().height

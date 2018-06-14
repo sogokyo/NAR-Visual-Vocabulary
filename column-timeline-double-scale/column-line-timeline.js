@@ -81,7 +81,7 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
     var yAxisL = d3.svg.axis()
         .scale(yScaleL)
         .tickValues(y1ticks)
-        .tickSize(10)
+        .tickSize(0)
         .orient("left")
 
     var yAxisR = d3.svg.axis()
@@ -105,7 +105,7 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
         .style("fill", colours[0]);
     yLabelR.selectAll('text')
         .attr("style", null)
-        .attr("x", yOffset*2)
+        .attr("x", yOffset*2)//To reduce width of chart data part from right
         .style("fill", colours[1])
 
     //calculate the width of the y axes objects
@@ -122,8 +122,8 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
             })
 
     //now we can reassign margins and set final plotWidth
-    margin.left=yLabelLOffsetL-8;
-    margin.right=yLabelLOffsetR;
+    margin.left=yLabelLOffsetL-0;
+    margin.right=yLabelLOffsetR+3;//Right margin adjust
 
     plotWidth=w-(margin.left+margin.right)
 
@@ -167,8 +167,8 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
 
     var xScale = d3.time.scale()
         .domain(xDomain)
-        //.range([+10,(plotWidth-yLabelLOffsetL-yLabelLOffsetR-margin.right-10)]);
-        .range([0,plotWidth-barWidth]);
+        .range([+5,(plotWidth-yLabelLOffsetL-yLabelLOffsetR-margin.right-10)]);
+        // .range([0,plotWidth-barWidth]);
 
     var xAxis = d3.svg.axis()
         .scale(xScale)
@@ -279,7 +279,7 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
         d3.select("#"+media+"legend").call(drag);
     
     var barTextL=legend.append("text")
-        .attr("x","1.1em")
+        .attr("x","1.8em")
         .attr("y","1.4em")
         .attr("class",media+"legend")
         .text(seriesNames[0])
@@ -287,14 +287,14 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
     var legOffset=barTextL.node().getBBox().width
 
     legend.append("rect")
-        .attr("x",legOffset+(yOffset/0))
-        .attr("y",-yOffset+yOffset/.6)
-        .attr("width",(yOffset/100)*85)
-        .attr("height",(yOffset/100)*85)
+        .attr("x",legOffset+(yOffset-37))
+        .attr("y",-yOffset+yOffset/.52)
+        .attr("width",(yOffset/100)*95)
+        .attr("height",(yOffset/100)*95)
         .style("fill", colours[0])
 
     var barTextR=legend.append("text")
-        .attr("x",w-11)
+        .attr("x",w-25)
         .attr("y","1.4em")
         .attr("class",media+"legend")
         .style("text-anchor","end")
@@ -303,10 +303,10 @@ function columnChart(data, stylename, media,yMin,yMax, yMin1,yMax1, chartpadding
     var legOffset=barTextR.node().getBBox().width
 
     legend.append("rect")
-        .attr("x",legOffset+(yOffset*40))
-        .attr("y",-yOffset+yOffset/.6)
-        .attr("width",(yOffset/100)*85)
-        .attr("height",(yOffset/100)*85)
+        .attr("x",legOffset+(yOffset*37))
+        .attr("y",-yOffset+yOffset/.52)
+        .attr("width",(yOffset/100)*95)
+        .attr("height",(yOffset/100)*95)
         .style("fill", colours[1])
 
     function colculateTicksize(align, offset) {

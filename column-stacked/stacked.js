@@ -123,7 +123,7 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, yMin, yM
 
     //bar width
     var xScale = d3.scale.ordinal()
-        .rangeBands([0, plotWidth-yLabelOffset],.4);
+        .rangeBands([10, plotWidth-10-yLabelOffset],.13);
 
     var xAxis = d3.svg.axis()
         .scale(xScale)
@@ -231,7 +231,7 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, yMin, yM
     
 
     // //create a legend first
-    var legendyOffset=0
+    var legendyOffset=13
         var legend = plot.append("g")
             .attr("id",media+"legend")
             .on("mouseover",pointer)
@@ -252,7 +252,7 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, yMin, yM
                 return media+"t"+i
             })
             .attr("x",yOffset+yOffset/4)
-            .attr("y",7)
+            .attr("y",0)
             .attr("class",media+"legend")
             .text(function(d){
                 return d;
@@ -260,7 +260,7 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, yMin, yM
 
         legend.append("rect")
             .attr("x",0)
-            .attr("y",-yOffset+yOffset/0.9)
+            .attr("y",-yOffset+yOffset/5)
             .attr("width",(yOffset/100)*85)
             .attr("height",(yOffset/100)*85)
             .style("fill", function(d,i){return colours[i]})
