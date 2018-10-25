@@ -17,7 +17,7 @@ var styleprint = {classes:
 {class:"xAxis text.forecast{opacity:0.6}"},
 {class:"yAxis{fill:none; stroke-width:0px; stroke:none;}"},
 {class:"yAxis line{fill:none; stroke-width:0.3px; stroke:#acacac;}"},
-{class:"yAxis text{fill:#000000; font-family: Avenir; font-size:10px; line-height:11px; font-weight:100; letter-spacing:-.2px; font-feature-settings: 'tnum' 1;}"},
+{class:"yAxis text{fill:#000000; font-family: Avenir; font-size:10px; line-height:11px; font-weight:100; font-feature-settings: 'tnum' 1;}"},
 {class:"origin line{fill:none; stroke-width:0.5px; stroke:#000;}"},
 {class:"lines{fill:none; stroke-width:2.0px;stroke-linecap: round;}"}
 ],
@@ -47,7 +47,7 @@ var styleweb = {classes:
 {class:"xAxis text.forecast{opacity:0.6}"},
 {class:"yAxis{fill:none; stroke-width:0px; stroke:none;}"},
 {class:"yAxis line{fill:none; stroke-width:0.3px; stroke:#acacac;}"},
-{class:"yAxis text{fill:#000000; font-family: Avenir; font-size:10px; line-height:11px; font-weight:100; letter-spacing:-.2px; font-feature-settings: 'tnum' 1;}"},
+{class:"yAxis text{fill:#000000; font-family: Avenir; font-size:10px; line-height:11px; font-weight:100; font-feature-settings: 'tnum' 1;}"},
 {class:"origin line{fill:none; stroke-width:0.5px; stroke:#000;}"},
 {class:"lines{fill:none; stroke-width:2.0px;stroke-linecap: round;}"}
 ],
@@ -77,7 +77,7 @@ var stylesoc = {classes:
 {class:"xAxis text.forecast{opacity:0.6}"},
 {class:"yAxis{fill:none; stroke-width:0px; stroke:none;}"},
 {class:"yAxis line{fill:none; stroke-width:0.3px; stroke:#acacac;}"},
-{class:"yAxis text{fill:#000000; font-family: Avenir; font-size:10px; line-height:11px; font-weight:100; letter-spacing:-.2px; font-feature-settings: 'tnum' 1;}"},
+{class:"yAxis text{fill:#000000; font-family: Avenir; font-size:10px; line-height:11px; font-weight:100; font-feature-settings: 'tnum' 1;}"},
 {class:"origin line{fill:none; stroke-width:0.5px; stroke:#000;}"},
 {class:"lines{fill:none; stroke-width:2.0px;stroke-linecap: round;}"}
 ],

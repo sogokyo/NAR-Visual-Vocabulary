@@ -12,7 +12,7 @@ var styleprint = {classes:
 {class:"xAxis text{font-family:Avenir; font-size:10px; line-height:11px; fill:#000000; font-weight:100; letter-spacing:-.2px; font-feature-settings:'tnum' 1;}"},
 {class:"yAxis{fill:none; stroke-width:0px; stroke:none;}"},
 {class:"yAxis line{fill:none; stroke-width:0.3px; stroke:#acacac;}"},
-{class:"yAxis text{font-family:Avenir; fill:#000000; font-size:10px; line-height:11px; font-weight:100; letter-spacing:-.2px; font-feature-settings: 'tnum' 1;}"},
+{class:"yAxis text{font-family:Avenir; fill:#000000; font-size:10px; line-height:11px; font-weight:100; font-feature-settings: 'tnum' 1;}"},
 {class:"origin line{fill:none; stroke-width:0.5px; stroke:#000;}"},
 {class:"linesHighlight{fill:none; stroke-width:.3px;stroke-linecap: round;}"},
 {class:"lines{fill:none; stroke-width:2.0px;stroke-linecap: round;}"}

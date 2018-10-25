@@ -2,7 +2,7 @@ var styleprint = {classes:
 [{class:"background{fill: none}"},
 {class:"chartholder{fill: none}"},
 {class:"title{font-family:Avenir; font-size:10px; line-height:11px; fill:#000000; font-weight:900; letter-spacing:-.2px;}"},
-{class:"subtitle{font-family:Avenir; font-style:italic; fill:#000000; font-size:7.5px; line-height:9px; font-weight:100 letter-spacing:-.2px;;}"},
+{class:"subtitle{font-family:Avenir; font-style:italic; fill:#000000; font-size:7.5px; line-height:9px; font-weight:100 letter-spacing:-.2px;}"},
 {class:"legend{font-family:Avenir; font-size:8px; line-height:9px; font-weight:100; fill:#000;}"},
 {class:"labels{font-family:Avenir; font-size:8px; line-height:9px; fill: #000; font-weight: 100;}"},
 {class:"source{fill:#000000; font-family:Avenir; font-style:italic; font-size:6.5px; line-height: 7px; font-weight:100;}"},

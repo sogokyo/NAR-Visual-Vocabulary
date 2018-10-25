@@ -111,7 +111,7 @@ function columnChart(data, stylename, media,yMin,yMax,yAxisHighlight, chartpaddi
         .call(xAxis)
         .selectAll("text")
         .attr("dy","1.2em")
-        .attr("dx","-.15em");
+        .attr("dx","+2em");
 
 
 
@@ -197,8 +197,8 @@ function columnChart(data, stylename, media,yMin,yMax,yAxisHighlight, chartpaddi
                 })
                 .attr("id",function(d) { return d.date+"-"+d.value; })
                 .attr("class",media+"fill")
-                .attr("x", function(d) { return xScale(d.date) - (plotWidth/data.length)/2; })
-                .attr("width", plotWidth/data.length-3.5)
+                .attr("x", function(d) { return xScale(d.date) - (plotWidth/data.length)/3; })
+                .attr("width", plotWidth/data.length-3.0)
                 .attr("y", function(d) { return yScale(Math.max(0, d.value))})
                 .attr("height", function(d) {return (Math.abs(yScale(d.value) - yScale(0))); })
                 .on("mouseover",pointer)

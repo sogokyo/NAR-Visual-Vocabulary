@@ -198,7 +198,7 @@ if (forecastIndex){
     d3.selectAll(".domain").remove()
 
     // //create a legend first
-    var legendyOffset=0
+    var legendyOffset=26
         var legend = plot.append("g")
             .attr("id",media+"legend")
             .on("mouseover",pointer)
