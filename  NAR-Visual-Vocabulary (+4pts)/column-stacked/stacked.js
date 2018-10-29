@@ -252,8 +252,8 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, yMin, yM
             .attr("id",function(d,i){
                 return media+"t"+i
             })
-            .attr("x",yOffset+yOffset/4)
-            .attr("y",-1)
+            .attr("x",yOffset+yOffset/8)
+            .attr("y",-3)
             .attr("class",media+"legend")
             .text(function(d){
                 return d;
@@ -261,7 +261,7 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, yMin, yM
 
         legend.append("rect")
             .attr("x",0)
-            .attr("y",-yOffset+yOffset/8)
+            .attr("y",-yOffset+yOffset-12.5)
             .attr("width",(yOffset/100)*85)
             .attr("height",(yOffset/100)*85)
             .style("fill", function(d,i){return colours[i]})
