@@ -81,7 +81,7 @@ function drawFrame(styles, media,titley,suby) {
         if(media=="print") {
             header.append("path")
             .attr("class",media+"hat")
-            .attr("d","M 0,"+.5+" L0,0.5 "+(width-0)+",0.5 "+(width-0.5)+","+0.5)
+            .attr("d","M 0,.5 L0,.5 "+(width-0)+",.5 "+(width-0)+",")
             chart.append("path")
             .attr("class",media+"hat")
             .attr("d","M 0,"+(height-0.5)+" L"+(width-0)+","+(height-0.5)+"")
