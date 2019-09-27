@@ -167,16 +167,16 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, xMin, xM
     .scale(xScale)
     .ticks(numTicksx)
     // .tickValues([0,4,8,12,16,20,24,28,32])
-    .tickSize(plotHeight+9)
+    .tickSize(plotHeight+6)
     .orient("bottom");
 
     var xLabels=plot.append("g")
       .attr("class", media+"xAxis")
-      .attr("transform", "translate("+(margin.left)+"," + (margin.top-6) + ")")
+      .attr("transform", "translate("+(margin.left)+"," + (margin.top-5) + ")")
       .attr("text-anchor","middle")
       .call(xAxis)
       .selectAll("text")
-      .attr("dy",".9em");
+      .attr("dy",-plotHeight-14);
 
     var originValue = 0;
     var origin = plot.selectAll(".tick").filter(function(d, i) {
@@ -200,7 +200,9 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, xMin, xM
     d3.selectAll(".domain").remove()
 
     //create a legend first
-    var legendyOffset=0
+    // orig: //var legendyOffset=0
+        var legendyOffset=yLabelOffset+2.5
+
         var legend = plot.append("g")
             .attr("id",media+"legend")
             .on("mouseover",pointer)
@@ -221,7 +223,7 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, xMin, xM
                 return media+"t"+i
             })
             .attr("x",yOffset+yOffset/5)
-            .attr("y",0)
+            .attr("y",-14)
             .attr("class",media+"legend")
             .text(function(d){
                 return d;
@@ -229,7 +231,8 @@ function stackedChart(data,stylename,media,plotpadding,legAlign,yAlign, xMin, xM
 
         legend.append("rect")
             .attr("x",0)
-            .attr("y",-yOffset+yOffset/5)
+//orig:            .attr("y",-yOffset+yOffset/5)
+            .attr("y",-yOffset/0.49)
             .attr("width",(yOffset/100)*85)
             .attr("height",(yOffset/100)*85)
             .style("fill", function(d,i){return colours[i]})

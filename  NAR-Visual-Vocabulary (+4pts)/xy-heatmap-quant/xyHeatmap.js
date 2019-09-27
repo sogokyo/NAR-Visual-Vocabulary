@@ -117,7 +117,7 @@ function xyHeatmap(data,stylename,media,plotpadding,legAlign,yAlign,breaks){
             .append("rect")
             .attr("width",cellWidth-9.6) //legend box widths
             .attr("height",cellHeight/4.8) //legend box heights
-            .attr("y",".3em")
+            .attr("y",".35em")
             .attr("x",function(d,i){
                 return i*labelWidth;
             })

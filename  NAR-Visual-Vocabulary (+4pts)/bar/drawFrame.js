@@ -70,7 +70,8 @@ function drawFrame(styles, media,titley,suby) {
         
         header.append("text")
             .attr("id",media+"Subtitle")
-            .attr("class", media+"subtitle")
+            // .attr("class", media+"subtitle")
+            //to get rid of 50% of 50%K
             .attr("x", margin.left)
             .attr("y", subYOffset+subtitleYoffset+titleYoffset+margin.top)
             .text(subtitle)
@@ -79,9 +80,9 @@ function drawFrame(styles, media,titley,suby) {
 
         //adds the hat and basline to the print version only
         if(media=="print") {
-             header.append("path")
+            header.append("path")
             .attr("class",media+"hat")
-            .attr("d","M 0,.5 L0,.5 "+(width-0)+",.5 "+(width-0)+",")
+            .attr("d","M 0,.5 L0,.5 "+(width-0)+",.5")
             chart.append("path")
             .attr("class",media+"hat")
             .attr("d","M 0,"+(height-0.5)+" L"+(width-0)+","+(height-0.5)+"")

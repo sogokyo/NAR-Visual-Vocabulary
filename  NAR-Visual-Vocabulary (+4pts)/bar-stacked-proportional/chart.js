@@ -68,9 +68,9 @@ function makeChart(data,seriesNames,stylename,media,plotpadding,legAlign,yAlign)
         .attr("fill",function(d,i){
             return colours[i];
         })
-        .attr("width",plotWidth/34)
-        .attr("height",plotHeight/17)
-        .attr("y",subtitleYoffset-26)
+        .attr("width",9.5)
+        .attr("height",9.5)
+        .attr("y",subtitleYoffset-25.5)
         .attr("x",function(d,i){
             return labelMarginL+(i*(plotWidth/4))
         })
@@ -119,7 +119,7 @@ function makeChart(data,seriesNames,stylename,media,plotpadding,legAlign,yAlign)
       .attr("text-anchor","middle")
       .call(xAxis)
       .selectAll("text")
-      .attr("dy","-13.4em");
+      .attr("dy",-plotHeight+17);
 
 
     //find out dimensions of key so that chart is offset below it

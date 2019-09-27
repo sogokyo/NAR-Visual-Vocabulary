@@ -1,0 +1,120 @@
+<html>
+<head>
+    <title>Frames for FT graphics</title>
+    <script type="text/javascript" src="styles.js"></script>
+    <link rel="stylesheet" type="text/css" href="./frameGlobalStyles.css">
+
+</head>
+<body>
+    <style>
+        text{font-family:metric}
+    </style>
+    <script src="d3.min.js"></script>
+    <script src="drawFrame.js"></script>
+    <script src="columnGroup.js"></script>
+    <script>
+        
+        //datafile
+        var dataURL = "groups.csv"
+        
+        //titles, footnotes
+        var title = "Title";
+        var subtitle = "(subtitle)";//delete subtitle text if not needed
+        var source = "| Source: ";
+        //graph options
+        var yMin=0
+        var yMax=8000
+        var yAxisHighlight=0;
+        var logScale=false;
+        var logScaleStart=1000;
+        var numTicksy = 4;//rough number of ticks for y axis
+        var ticks//=[0.2,0.3];//option to force tick values for online
+
+        //Use the frames array to set unique values for each media type of frame
+        // Print column sizes-- 1col 53.71mm: 2col 112.25mm: 3col 170.8mm: 4col 229.34mm: 5col 287.88mm: 6col 346.43
+        var frames=[
+        {name:"print",width:341,height:204,units:'px',margins:[{top:5,right:0,bottom:3, left:0}],stylesheet:styleprint,legend:"hori",yLabel:"left"},
+        {name:"web",width:164,height:192,units:'px',margins:[{top:5,right:0,bottom:3,left:0}],stylesheet:styleweb,legend:"vert",yLabel:"left"},
+        {name:"social",width:341,height:179,units:'px',margins:[{top:10,right:10, bottom:10, left:10}],stylesheet:stylesoc,legend:"hori",yLabel:"left"},
+        // {name:"video",width:1920,height:1080,units:'px',margins:[{top:80,right:207,bottom:50,left:207}],stylesheet:stylevid,legend:"hori",yLabel:"right"}
+        ]
+        
+        //sets the padding inside the chart area
+        var chartpadding=[
+        {name:"print",margin:[{top:13, right:0, bottom:10, left:0}]},
+        {name:"web",margin:[{top:24, right:0, bottom:10, left:0}]},
+        {name:"social",margin:[{top:10, right:0, bottom:10, left:0}]},
+        // {name:"video",margin:[{top:55, right:35,bottom:80, left:0}]}
+        ]
+        
+        /*SHOULD NOT NEED TO CHANGE MUCH BELOW HERE*/
+        for (var i=0;i<frames.length;i++){
+            var stylename=frames[i].stylesheet;
+            var media = frames[i].name;
+            if(frames[i].units=="mm") {
+                framewidth = mmToPx(frames[i].width);
+                frameheight = mmToPx(frames[i].height);
+            }
+            else{
+                framewidth = frames[i].width;
+                frameheight = frames[i].height;
+            }
+            var framemargin = frames[i].margins[0];
+            var titleYoffset=stylename.titleOffset;
+            var subYoffset=stylename.subOffset
+            var frame = new drawFrame(stylename.classes,media,titleYoffset,subYoffset)
+                .width(framewidth)
+                .height(frameheight)
+                .margin(framemargin)
+                .title(title)
+                .source(source)
+            //optional elements
+            if (subtitle){
+                frame.subtitle(subtitle)
+            }
+            d3.select("body").call(frame)
+            //drawFrame
+
+        }
+        
+        d3.csv(dataURL,function(error, data){
+            //date formatter, matching the format of the incoming csv...
+            //var parseDate = d3.time.format("%Y %b").parse;
+            //var parseDate = d3.time.format("%Y").parse;//just full year
+            var parseDate = d3.time.format("%d-%b-%y").parse;
+            /*
+            some common formatting parsers....
+            d3.time.format("%Y %b") 1986 Jan
+            d3.time.format("%d-%b-%y")  28-Jan-86
+            d3.time.format("%Y-%m-%d")  1986-01-28
+            d3.time.format("%m/%d/%Y")  01/28/1986
+            d3.time.format("%H:%M") 11:39
+            d3.time.format("%H:%M %p")  11:39 AM
+            d3.time.format("%B %d") January 28
+            d3.time.format("%d %b") 28 Jan
+             */
+
+            //parse the data
+            // data.forEach(function(d) {
+            //     d.date=parseDate(d.date);
+            // });
+
+            for (var i=0;i<frames.length;i++){
+                var stylename=frames[i].stylesheet;
+                var media = frames[i].name;
+                var legend=frames[i].legend;
+                var subYoffset=stylename.subOffset;
+                var yLabel=frames[i].yLabel
+                columnChart(data, stylename, media, chartpadding,legend, logScale, logScaleStart, yMin,yMax, yAxisHighlight, numTicksy, ticks, yLabel);
+            }
+        })//end data load
+
+
+        function mmToPx(mm){
+            var px = mm*2.83464480558843;
+            return px;
+        }
+            
+    </script>
+</body>
+</html>

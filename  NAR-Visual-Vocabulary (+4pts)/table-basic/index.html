@@ -14,9 +14,9 @@
 			.divider {stroke-width:0.3pt;stroke:#111111;}
 			.hat {stroke-width:0.3pt;stroke:#111111;}
 
-			.rowDark{fill:#d1d3d4;}
+			.rowDark{fill:#000; opacity:0.1;}
 			.rowPale{fill:none;}
-
+			/*#heading1,#heading2,#heading3 { text-transform: capitalize; }	/* none,uppercase,owercase */
 		</style>
 		<script src="https://d3js.org/d3.v4.min.js"></script>
 	</head>
@@ -26,11 +26,11 @@
 		const dataSource = "toys.csv"
 		const title = "Title";//; add | to break text to new line
 		const subtitle = "(subtitle)";
-		const source = "Source: "//for no source, "nothing inside"; add | to break text to new line
-		let footnote = "Footnote/Source: ";//for no footnote, "nothing inside"; add | to break text to new line
+		const source = ""//for no source, "nothing inside"; add | to break text to new line
+		let footnote = "Source: ";//for no footnote, "nothing inside"; add | to break text to new line
 
 		//starting positions for columns
-		const colPos = [0,20,80,293];
+		const colPos = [0,49,103];
 
 		const w = 341;//width is constant, you can only set it here
 		let h;//will be determined by the rows and will change
@@ -45,7 +45,7 @@
 
 		//margins above and below the table itself
 		const margin = {
-			top:67, //50 for one-line title, 62 with subtitle, 66 for two-line title
+			top:72, //50 for one-line title, 62 with subtitle, 66 for two-line title
 			bottom:20 //18 for one-line footnote/source, 25 for two lines
 		};
 
@@ -116,7 +116,7 @@
 				.attr("x",function(d,i){
 					return colPos[i]+cellPadding.left;
 				})
-				.attr("y",margin.top+0)
+				.attr("y",margin.top-2)
 				.attr("class","heading");
 
 			cols.selectAll("tspan")
@@ -126,7 +126,8 @@
 				.enter()
 				.append("tspan")
 				.text(function(d){
-					return d.toLowerCase();
+					//return d.toLowerCase(); //toUpperCase or toLowerCase
+					return d.charAt(0).toUpperCase() + d.slice(1);
 				})
 
 				.attr("x",function(d,i){
@@ -148,13 +149,7 @@
 					const offset = maxTextHeight-col.node().getBBox().height;
 					return "translate(0,"+offset+")";
 				})
-
-					
 			})
-
-
-
-
 
 			header.attr("transform",function(){
 				const headerHeight = d3.select("#header").node().getBBox().height;
@@ -269,7 +264,7 @@
 				})
 				.attr("y1",function(){
 					const headerHeight = d3.select("#header").node().getBBox().height;
-					return margin.top-headerHeight;
+					return margin.top-headerHeight-1;
 				})
 				.attr("y2",function(){
 					const tableHeight = d3.select("#rows").node().getBBox().height;

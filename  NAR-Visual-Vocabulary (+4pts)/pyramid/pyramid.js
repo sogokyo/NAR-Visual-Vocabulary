@@ -81,7 +81,8 @@ function pyramid(data,stylename,media,plotpadding,legAlign,yAlign,xmin,xmax,numT
       .attr("text-anchor","middle")
       .call(xAxis)
       .selectAll("text")
-      .attr("dy",".9em");
+// Change y-position of x-axis labels here     // 
+      .attr("dy",-plotHeight-8);
 
     var xScaleL = d3.scale.linear()
         .range([margin.left, (plotWidth/2.05)-(yLabelOffset/2.2)])
@@ -100,7 +101,8 @@ function pyramid(data,stylename,media,plotpadding,legAlign,yAlign,xmin,xmax,numT
       .attr("text-anchor","middle")
       .call(xAxis)
       .selectAll("text")
-      .attr("dy",".9em");
+// Change y-position of x-axis labels here     // 
+      .attr("dy",-plotHeight-8);
 
     var originValue = 0;
     var origin = plot.selectAll(".tick").filter(function(d, i) {
@@ -109,14 +111,14 @@ function pyramid(data,stylename,media,plotpadding,legAlign,yAlign,xmin,xmax,numT
 
     let labelLeft=plot.append("text")
         .attr("x",xScaleR(0)+margin.left)
-        .attr("y",yOffset-2)
+        .attr("y",yOffset-1)
         .attr("class",media+"subtitle")
         .style("text-anchor","start")
         .text(seriesNames[1])
 
     let labelRight=plot.append("text")
         .attr("x",xScaleL(0)+margin.left)
-        .attr("y",yOffset-2)
+        .attr("y",yOffset-1)
         .attr("class",media+"subtitle")
         .style("text-anchor","end")
         .text(seriesNames[0])

@@ -47,7 +47,7 @@ function spine(data,stylename,media,plotpadding,legAlign,yAlign,xmin,xmax,numTic
 
     yLabel
         .attr("transform",function(){
-                return "translate("+(margin.left+yLabelOffset)+","+margin.top+")"
+                return "translate("+(margin.left+yLabelOffset+1)+","+margin.top+")"
             })
 
 
@@ -78,7 +78,8 @@ function spine(data,stylename,media,plotpadding,legAlign,yAlign,xmin,xmax,numTic
         .attr("transform", "translate("+(margin.left)+"," + (margin.top) + ")")
         .call(xAxisR)
         .selectAll("text")
-        .attr("dy",".9em");
+// Change y-position of x-axis labels here     // 
+      .attr("dy",-h+25);
 
     var xScaleL = d3.scale.linear()
         .range([margin.left+yLabelOffset,margin.left+(yLabelOffset/2)+(plotWidth/2)])
@@ -97,7 +98,8 @@ function spine(data,stylename,media,plotpadding,legAlign,yAlign,xmin,xmax,numTic
       .attr("text-anchor","middle")
       .call(xAxis)
       .selectAll("text")
-      .attr("dy",".9em");
+// Change y-position of x-axis labels here     // 
+      .attr("dy",-h+25);
 
     var originValue = 0;
     var origin = plot.selectAll(".tick").filter(function(d, i) {
@@ -105,15 +107,15 @@ function spine(data,stylename,media,plotpadding,legAlign,yAlign,xmin,xmax,numTic
         }).classed(media+"origin",true);
 
     let labelLeft=plot.append("text")
-        .attr("x",xScaleR(0)+margin.left+yOffset-6)
-        .attr("y",yOffset-4)
+        .attr("x",xScaleR(0)+margin.left+yOffset-8)
+        .attr("y",yOffset-5)
         .attr("class",media+"legend")
         .style("text-anchor","start")
         .text(seriesNames[1])
 
     let labelRight=plot.append("text")
-        .attr("x",xScaleL(0)+margin.left-yOffset+6)
-        .attr("y",yOffset-4)
+        .attr("x",xScaleL(0)+margin.left-yOffset+8)
+        .attr("y",yOffset-5)
         .attr("class",media+"legend")
         .style("text-anchor","end")
         .text(seriesNames[0])

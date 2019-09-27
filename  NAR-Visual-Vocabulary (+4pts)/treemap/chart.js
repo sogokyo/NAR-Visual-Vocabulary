@@ -35,7 +35,7 @@ function makeChart(data,stylename,media,plotpadding,legAlign,yAlign){
     var treemap = d3.layout.treemap()//defines a potential treemap to be drawn
         .size([plotWidth, plotHeight])//sets the width and height as defined abouve
         .sticky(true)
-        .sort(function(a, b) { return a.value - b.value; })//Sorts biggest rects to the left
+        //.sort(function(a, b) { return a.value - b.value; })//Sorts biggest rects to the left
         .value(function(d) { 
             return d.value; })//gets the value for the group rect
         .children(function(d){

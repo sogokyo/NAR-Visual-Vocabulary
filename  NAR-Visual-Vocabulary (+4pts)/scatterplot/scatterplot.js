@@ -156,7 +156,7 @@ function scatterplot(data,stylename,media,plotpadding,legAlign,yAlign, yMin,yMax
                 return media+"t"+i
             })
             .attr("x",yOffset/2-yOffset/5+2)
-            .attr("y",yOffset/3-6)
+            .attr("y",yOffset/3-7.5)
             .attr("class",media+"legend")
             .text(function(d){
                 return d;

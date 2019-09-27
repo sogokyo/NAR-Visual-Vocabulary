@@ -19,22 +19,22 @@
         var dataURL = "data.csv"
         
         //titles, footnotes
-        var title = "Title";
-        var subtitle = "(subtitle)";//delete [Subtitle] if not needed
-        var source = "|Source: ";
+        var title = "Teenage suicide rates in Asia";
+        var subtitle = "(deaths per 100,000 in 2016)";//delete [Subtitle] if not needed
+        var source = "|Source: World Health Organization";
         
         //graph options
         var xMin=0
-        var xMax=100
+        var xMax=12
         var xAxisHighlight=0;
         var labels=false;//show numbers on bars
-        var numTicksx=5;//rough number of ticks for x axis
+        var numTicksx=6;//rough number of ticks for x axis
         var ticks//=[0.2,0.3];//option to force tick values for online
 
         //Use the frames array to set unique values for each media type of frame
         // Print column sizes-- 1col 164pt: 2col 341pt: 3col 518pt: 4col 229.34mm: 5col 287.88mm: 6col
         var frames=[
-        {name:"print",width:341,height:204,units:'px',margins:[{top:5,right:1,bottom:3, left:0}],stylesheet:styleprint,legend:"hori"},
+        {name:"print",width:341,height:240,units:'px',margins:[{top:5,right:1,bottom:3, left:0}],stylesheet:styleprint,legend:"hori"},
         {name:"web",width:164,height:204,units:'px',margins:[{top:5,right:1,bottom:3,left:0}],stylesheet:styleweb,legend:"vert"},
         {name:"social",width:341,height:179,units:'px',margins:[{top:10,right:10, bottom:10, left:10}],stylesheet:stylesoc,legend:"horiz"},
         // {name:"video",width:1920,height:1080,units:'px',margins:[{top:80,right:207,bottom:50,left:207}],stylesheet:stylevid,legend:"hori",yLabel:"right"}

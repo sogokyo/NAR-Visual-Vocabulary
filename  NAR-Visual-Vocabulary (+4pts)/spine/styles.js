@@ -3,7 +3,7 @@ var styleprint = {classes:
 {class:"chartholder{fill: none}"},
 {class:"title{font-family:Avenir; font-size:14px; line-height:15px; fill:#000000; font-weight:900;}"},
 {class:"subtitle{font-family:Avenir; font-style:italic; fill:#000000; font-size:11.5px; line-height:15px; font-weight:100; opacity:0.5; letter-spacing:-.2px;}"},
-{class:"legend{font-family:Avenir; font-size:12px; line-height:13px; font-weight:100; fill: #000; letter-spacing:-.2px;}"},
+{class:"legend{font-family:Avenir; font-size:12px; line-height:13px; font-weight:900; fill: #000; letter-spacing:-.2px;}"},
 {class:"labels{font-family:Avenir; font-size:12px; line-height:13px; fill:#000; font-weight:100; letter-spacing:-.2px;}"},
 {class:"source{font-family:Avenir; font-style:italic; fill:#000000; font-size:10.5px; line-height:11px; font-weight:100; opacity:0.5; letter-spacing:-.2px;}"},
 {class:"logo{fill: none;}"},

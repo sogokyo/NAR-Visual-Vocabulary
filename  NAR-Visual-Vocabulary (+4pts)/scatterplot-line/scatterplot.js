@@ -205,8 +205,8 @@ function scatterplot(data,stylename,media,plotpadding,legAlign,yAlign, yMin,yMax
             .attr("id",function(d,i){
                 return media+"t"+i
             })
-            .attr("x",yOffset/3-yOffset/4+24)
-            .attr("y",yOffset-9.5)
+            .attr("x",yOffset/3-yOffset/4+26)
+            .attr("y",yOffset-14)
             .attr("class",media+"legend")
             .text(function(d){
                 return d;

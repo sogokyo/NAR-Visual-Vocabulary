@@ -408,8 +408,8 @@ function lineChart(data, stylename, media, yMin, yMax, yAxisHighlight, plotpaddi
             .attr("id",function(d,i){
                 return media+"t"+i
             })
-            .attr("x",yOffset+yOffset/0.9)
-            .attr("y",yOffset/2.4)
+            .attr("x",yOffset+yOffset/1.2)
+            .attr("y",yOffset/3)
             .attr("class",media+"legend")
             .text(function(d){
                 return d;
